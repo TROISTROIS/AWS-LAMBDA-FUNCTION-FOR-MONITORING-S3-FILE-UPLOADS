@@ -13,7 +13,7 @@ def lambda_handler(event, context):
     size = event['Records'][0]['s3']['object']['size']
     print("File Size: ", size)
 
-    size_thresh = 100 * (1024**2)
+    size_thresh = 90 * (1024**2)
     if size <= size_thresh:
         return {
             'statusCode': 200,
